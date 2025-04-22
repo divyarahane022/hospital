@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - Infinite Medical Express</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(72, 75, 77, 0.5), rgba(156, 194, 209, 0.26)), url('assets/images/header-bg.jpg');
+            background-size: cover;
+            height: 300px;
+            color: white;
+        }
+        .form-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .required::after {
+            content: "*";
+            color: red;
+            margin-left: 4px;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .form-control.is-invalid ~ .error-message {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MediCare Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#doctors">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4">Book Appointment</h1>
+            <p class="lead">Schedule your visit with us</p>
+        </div>
+    </section>
+
+    <!-- Appointment Form -->
+    <section class="py-5">
+        <div class="container">
+            <div class="form-section">
+                <form id="appointmentForm" class="needs-validation" novalidate>
+                    <!-- Personal Information -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Personal Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label required">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" 
+                                           pattern="[A-Za-z]{2,50}" 
+                                           title="Name should only contain letters and be between 2-50 characters"
+                                           required>
+                                    <div class="error-message">
+                                        Please enter a valid first name (only letters, 2-50 characters)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label required">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" 
+                                           pattern="[A-Za-z]{2,50}" 
+                                           title="Name should only contain letters and be between 2-50 characters"
+                                           required>
+                                    <div class="error-message">
+                                        Please enter a valid last name (only letters, 2-50 characters)
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="dob" class="form-label required">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="gender" class="form-label required">Gender</label>
+                                    <select class="form-select" id="gender" required>
+                                        <option value="">Choose...</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Contact Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label required">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                    <div class="error-message">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label required">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" 
+                                           pattern="[0-9]{10}" 
+                                           title="Please enter a valid 10-digit phone number"
+                                           required>
+                                    <div class="error-message">
+                                        Please enter a valid 10-digit phone number
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="address" class="form-label required">Address</label>
+                                    <input type="text" class="form-control" id="address" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appointment Details -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Appointment Details</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="service" class="form-label required">Service Type</label>
+                                    <select class="form-select" id="service" required>
+                                        <option value="">Choose...</option>
+                                        <option value="urgent-care">Urgent Care</option>
+                                        <option value="physical-exam">Physical Exam</option>
+                                        <option value="flu-shot">Flu Shot</option>
+                                        <option value="occupational-exam">Occupational Exam</option>
+                                        <option value="std">STD Testing</option>
+                                        <option value="dot">DOT Certification</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="preferredDate" class="form-label required">Preferred Date</label>
+                                    <input type="date" class="form-control" id="preferredDate" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="preferredTime" class="form-label required">Preferred Time</label>
+                                    <select class="form-select" id="preferredTime" required>
+                                        <option value="">Choose...</option>
+                                        <option value="morning">Morning (9AM - 12PM)</option>
+                                        <option value="afternoon">Afternoon (12PM - 4PM)</option>
+                                        <option value="evening">Evening (4PM - 8PM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medical History -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Medical History</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label for="currentMedications" class="form-label">Current Medications</label>
+                                    <textarea class="form-control" id="currentMedications" rows="2"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="allergies" class="form-label">Allergies</label>
+                                    <textarea class="form-control" id="allergies" rows="2"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="medicalConditions" class="form-label">Existing Medical Conditions</label>
+                                    <textarea class="form-control" id="medicalConditions" rows="2"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="symptoms" class="form-label required">Current Symptoms/Reason for Visit</label>
+                                    <textarea class="form-control" id="symptoms" rows="3" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Insurance Information -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Insurance Information</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="insuranceProvider" class="form-label">Insurance Provider</label>
+                                    <input type="text" class="form-control" id="insuranceProvider">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="policyNumber" class="form-label">Policy Number</label>
+                                    <input type="text" class="form-control" id="policyNumber">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Submit -->
+                    <div class="mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">
+                                I agree to the terms and conditions and consent to share my medical information
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Schedule Appointment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 MediCare Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form validation
+        (function () {
+            'use strict'
+
+            // Function to validate name
+            function validateName(input) {
+                const nameRegex = /^[A-Za-z]{2,50}$/;
+                return nameRegex.test(input.value);
+            }
+
+            // Function to validate phone number
+            function validatePhone(input) {
+                const phoneRegex = /^[0-9]{10}$/;
+                return phoneRegex.test(input.value);
+            }
+
+            // Function to show error message
+            function showError(input, message) {
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+                const errorDiv = input.nextElementSibling;
+                if (errorDiv && errorDiv.classList.contains('error-message')) {
+                    errorDiv.textContent = message;
+                }
+            }
+
+            // Function to show success
+            function showSuccess(input) {
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+            }
+
+            // Get all form elements
+            const firstName = document.getElementById('firstName');
+            const lastName = document.getElementById('lastName');
+            const phone = document.getElementById('phone');
+
+            // Add real-time validation for first name
+            firstName.addEventListener('input', function() {
+                if (!validateName(this)) {
+                    showError(this, 'Please enter a valid first name (only letters, 2-50 characters)');
+                } else {
+                    showSuccess(this);
+                }
+            });
+
+            // Add real-time validation for last name
+            lastName.addEventListener('input', function() {
+                if (!validateName(this)) {
+                    showError(this, 'Please enter a valid last name (only letters, 2-50 characters)');
+                } else {
+                    showSuccess(this);
+                }
+            });
+
+            // Add real-time validation for phone
+            phone.addEventListener('input', function() {
+                if (!validatePhone(this)) {
+                    showError(this, 'Please enter a valid 10-digit phone number');
+                } else {
+                    showSuccess(this);
+                }
+            });
+
+            // Format phone number as user types
+            phone.addEventListener('input', function(e) {
+                // Remove all non-digits
+                let input = this.value.replace(/\D/g, '');
+                // Trim to 10 digits if longer
+                input = input.substring(0, 10);
+                this.value = input;
+            });
+
+            // Existing form validation
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity() || 
+                            !validateName(firstName) || 
+                            !validateName(lastName) || 
+                            !validatePhone(phone)) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            
+                            // Check each field and show appropriate errors
+                            if (!validateName(firstName)) {
+                                showError(firstName, 'Please enter a valid first name (only letters, 2-50 characters)');
+                            }
+                            if (!validateName(lastName)) {
+                                showError(lastName, 'Please enter a valid last name (only letters, 2-50 characters)');
+                            }
+                            if (!validatePhone(phone)) {
+                                showError(phone, 'Please enter a valid 10-digit phone number');
+                            }
+                        } else {
+                            event.preventDefault();
+                            // Here you would typically send the form data to your server
+                            alert('Appointment request submitted successfully! We will contact you shortly to confirm your appointment.');
+                        }
+                        form.classList.add('was-validated');
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+</html>
