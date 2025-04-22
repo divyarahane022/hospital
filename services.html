@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Infinite Medical Express</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .service-card {
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .page-header {
+            background: linear-gradient(rgba(151, 199, 243, 0.664), rgba(0, 0, 0, 0.24)), url('assets/images/header-bg.jpg');
+            background-size: cover;
+            height: 300px;
+            color: white;
+        }
+        .service-img-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .service-img:hover {
+            transform: scale(1.05);
+        }
+        .card {
+            padding: 1rem;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MediCare Hospital</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#doctors">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4"><bold>Our Services</bold></h1>
+            <p class="lead">Comprehensive Healthcare Solutions</p>
+        </div>
+    </section>
+
+    <!-- All Services -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100 border-0 bg-light">
+                        <div class="card-body">
+                            <div class="service-img-container mb-3">
+                                <img src="image.jpg" alt="Urgent Care" class="service-img">
+                            </div>
+                            <h5 class="card-title">Urgent Care</h5>
+                            <p class="card-text">Immediate medical attention for non-emergency conditions</p>
+                            <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100 border-0 bg-light">
+                        <div class="card-body">
+                            <div class="service-img-container mb-3">
+                                <img src="i2.jpg" alt="Physical Exams" class="service-img">
+                            </div>
+                            <h5 class="card-title">Physical Exams</h5>
+                            <p class="card-text">Comprehensive physical examination services</p>
+                            <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100 border-0 bg-light">
+                        <div class="card-body">
+                            <div class="service-img-container mb-3">
+                                <img src="i3.jpg" alt="Flu Shot" class="service-img">
+                            </div>
+                            <h5 class="card-title">Flu Shot</h5>
+                            <p class="card-text">Seasonal flu vaccination services</p>
+                            <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100 border-0 bg-light">
+                        <div class="card-body">
+                            <div class="service-img-container mb-3">
+                                <img src="i4.jpg" alt="Occupational Exam" class="service-img">
+                            </div>
+                            <h5 class="card-title">Occupational Exam</h5>
+                            <p class="card-text">Work-related medical examinations</p>
+                            <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100 border-0 bg-light">
+                        <div class="card-body">
+                            <div class="service-img-container mb-3">
+                                <img src="i5.jpg" alt="STD" class="service-img">
+                            </div>
+                            <h5 class="card-title">STD</h5>
+                            <p class="card-text">Confidential STD testing and treatment</p>
+                            <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-md-4">
+                    <div class="card text-center h-100 border-0 bg-light">
+                        <div class="card-body">
+                            <div class="service-img-container mb-3">
+                                <img src="i6.jpg" alt="DOT Certifications" class="service-img">
+                            </div>
+                            <h5 class="card-title">DOT Certifications</h5>
+                            <p class="card-text">Department of Transportation medical certifications</p>
+                            <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2023 MediCare Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
